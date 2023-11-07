@@ -4,11 +4,16 @@ import { FontAwesome } from '@expo/vector-icons';
 import { Colors } from '../theme/Colors';
 
 
-import Profile from '../screens/Profile';
-import Home from '../screens/Home';
 
-import Admin from '../screens/Admin';
+
+
+
 import MyCalendar from '../screens/MyCalendar';
+import GymNavigation from './GymNavigation';
+import ProfileNavigation from './ProfileNavigation';
+
+import AdminNavigation from './AdminNavigation';
+
 
 
 
@@ -17,7 +22,9 @@ const Tab = createBottomTabNavigator();
 
 const admin = true;
 
-const TabNavegation = () => {
+const TabNavigation = () => {
+
+    
     return (
 
         <Tab.Navigator
@@ -43,7 +50,7 @@ const TabNavegation = () => {
                             color={focused ? Colors.yellow : Colors.white} />
                     )
                 }}
-                name="home" component={Home} />
+                name="gymNavigation" component={GymNavigation} />
             <Tab.Screen
                 options={{
                     tabBarIcon: ({ focused }) =>
@@ -54,7 +61,7 @@ const TabNavegation = () => {
                             color={focused ? Colors.yellow : Colors.white} />
                     )
                 }}
-                // name="ProfileNavegation" component={ProfileNavigation} 
+                // name="ProfileNavigation" component={ProfileNavigation} 
                 name="myCalendar" component={MyCalendar}
             />
             <Tab.Screen
@@ -67,8 +74,8 @@ const TabNavegation = () => {
                             color={focused ? Colors.yellow : Colors.white} />
                     )
                 }}
-                // name="ProfileNavegation" component={ProfileNavigation} 
-                name="profile" component={Profile}
+                // name="ProfileNavigation" component={ProfileNavigation} 
+                name="profileNavigation" component={ProfileNavigation}
             />
             {admin ? <Tab.Screen
                 options={{
@@ -80,8 +87,8 @@ const TabNavegation = () => {
                             color={focused ? Colors.yellow : Colors.white} />
                     )
                 }}
-                // name="ProfileNavegation" component={ProfileNavigation} 
-                name="admin" component={Admin}
+                // name="ProfileNavigation" component={ProfileNavigation} 
+                name="adminNavigation" component={AdminNavigation}
             /> : null }
 
         </Tab.Navigator>
@@ -90,4 +97,4 @@ const TabNavegation = () => {
 }
 
 
-export default TabNavegation
+export default TabNavigation

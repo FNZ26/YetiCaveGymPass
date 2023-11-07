@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { FontAwesome } from '@expo/vector-icons';

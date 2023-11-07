@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import {StyleSheet, FlatList, View, Text } from 'react-native';
 import EventDayItem from './EventDayItem';
@@ -5,9 +6,10 @@ import EventDayItem from './EventDayItem';
 
 
 
-const CustomList = ({ items }) => {
 
-    console.log(items)
+const CustomCalendarList = ({ items }) => {
+
+
     return (
         <View>
             <Text  styles={styles.container}>List of Events:</Text>
@@ -48,6 +50,8 @@ const styles = StyleSheet.create({
     }
 })
 
-  
 
-export default CustomList;
+
+export default CustomCalendarList;
+
+

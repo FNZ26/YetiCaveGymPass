@@ -3,8 +3,6 @@ import Home from '../screens/Home';
 import GymDetail from '../screens/GymDetail';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-
-
 const Stack = createNativeStackNavigator();
 
 const GymNavigation = () => {

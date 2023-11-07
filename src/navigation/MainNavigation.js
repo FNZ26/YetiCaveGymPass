@@ -6,10 +6,6 @@ import { useSelector } from 'react-redux';
 import Login from '../screens/Login';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
-//Para cuando incluya la parte de login y firebase 
-//import { useSelector } from 'react-redux';
-
 const MainNavigation = () => {
   const [checkedUser, setCheckedUser] = useState(null)
   const user = useSelector(state => state.authSlice.user);
@@ -26,10 +22,7 @@ const MainNavigation = () => {
     };
     checkUser();
   }, [user]);
-
-  
-  
-  console.log("usuario: ", user)
+  //console.log("usuario: ", user)
   return (
     <NavigationContainer>
       {checkedUser ? <TabNavigation /> : <Login />}

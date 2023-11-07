@@ -4,7 +4,6 @@ import { Colors } from '../theme/Colors'
 
 const Header = ({ title = "Home"}) => {
 
-
   return (
     <View style={styles.container}>
       

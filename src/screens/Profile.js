@@ -12,20 +12,6 @@ const Profile = () => {
 
     const dispatch = useDispatch();
 
-    //tabla usuario
-    /*
-    Tabla "Usuarios":
-    
-    ID de usuario (clave primaria)
-    Nombre de usuario
-    Nombre completo
-    Dirección de correo electrónico
-    Contraseña (almacenada de forma segura, como un hash)
-    Número de teléfono
-    genero
-    Fecha de nacimiento
-    Foto de perfil
-    */
     const onHandleLogout = async () => {
         try{
             dispatch(clearUser());
@@ -132,6 +118,20 @@ Registro de intentos de inicio de sesión, incluyendo direcciones IP y fechas y 
 Asegúrate de diseñar la base de datos de acuerdo a las necesidades específicas de tu aplicación y considera aspectos de seguridad, como el cifrado de contraseñas y la protección de datos personales de los usuarios, para cumplir con las regulaciones de privacidad y seguridad de datos.
 
 
+    //tabla usuario
+  
+    Tabla "Usuarios":
+    
+    ID de usuario (clave primaria)
+    Nombre de usuario
+    Nombre completo
+    Dirección de correo electrónico
+    Contraseña (almacenada de forma segura, como un hash)
+    Número de teléfono
+    genero
+    Fecha de nacimiento
+    Foto de perfil
+ 
 
 
 

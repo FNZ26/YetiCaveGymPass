@@ -3,7 +3,6 @@ import React from 'react'
 import { Colors } from '../theme/Colors'
 
 const Line = ({ size = '100%' }) => {
-
     // recibe el tamaño de la linea en %
     return (
         <View style={styles.lineContainer} >

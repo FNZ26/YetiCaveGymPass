@@ -1,14 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
-
 const authSlice = createSlice({
     name: "authSlice",
-
     initialState: {
         user: null,
         idToken: null,
-
     },
 
     reducers: {
@@ -21,7 +17,6 @@ const authSlice = createSlice({
         clearUser: (state) => {
             (state.user = null),
                 (state.idToken = null);
-
         }
     },
 })

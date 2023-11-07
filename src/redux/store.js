@@ -19,8 +19,3 @@ export const store = configureStore({
 
 
 
-
-// store es el almacenamiento de datos de toda mi app
-// aca se guardan todos los estados (estilo usestate) de cada dato
-// en la carpeta slices  van separadas las slice de cada parte de la app (gyms,  perfil, etc)
-

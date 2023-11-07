@@ -5,21 +5,13 @@ import MainNavigation from './src/navigation/MainNavigation';
 import { Provider } from 'react-redux';
 import { store } from './src/redux/store';
 
-
-
-
-
 export default function App() {
-
-
-
   const [fontLoaded] = useFonts({
     NunitoBlack: require("./assets/fonts/Nunito-Black.ttf"),
     NunitoBold: require("./assets/fonts/Nunito-Bold.ttf"),
     NunitoMedium: require("./assets/fonts/Nunito-Medium.ttf"),
     NunitoRegular: require("./assets/fonts/Nunito-Regular.ttf"),
     NunitoLight: require("./assets/fonts/Nunito-Light.ttf"),
-
   });
 
   if (!fontLoaded) {

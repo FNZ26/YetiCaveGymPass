@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { FontAwesome } from '@expo/vector-icons';
@@ -6,7 +5,7 @@ import { TouchableOpacity } from 'react-native';
 import { Colors } from '../theme/Colors';
 
 const EventDayItem = ({ item }) => {
-    console.log(item)
+   
 
     return (
         <View styles={styles.container}>
@@ -15,11 +14,11 @@ const EventDayItem = ({ item }) => {
                 <Text styles={styles.text}>{`${item.startTime} - ${item.endTime}`}</Text>
             </View>
             <View style={styles.icons}>
-                <TouchableOpacity style={styles.button} onPress={() => console.log('boton edificio')}>
+                <TouchableOpacity style={styles.button} onPress={() => console.log('Lanzar Modal')}>
                     <FontAwesome name="building" size={24} color="black" />
 
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.button} onPress={() => console.log('boton play')}>
+                <TouchableOpacity style={styles.button} onPress={() => console.log('Lanzar modal')}>
                     <FontAwesome name="play" size={24} color="black" />
 
                 </TouchableOpacity>
@@ -32,18 +31,14 @@ const EventDayItem = ({ item }) => {
 
 export default EventDayItem
 
-
 const styles = StyleSheet.create({
     container: {
 
         borderColor: 'red',
         borderWidth: 5,
         flexDirection: 'row',
-
-
     },
     text: {
-
         borderColor: 'red',
         borderWidth: 5,
     },
@@ -51,7 +46,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'red',
     },
     flat: {
-
         borderColor: 'green',
         borderWidth: 5,
     },

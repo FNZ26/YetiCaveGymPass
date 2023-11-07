@@ -2,16 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import { useGetClassQuery, useGetGymListQuery } from "../../services/gymApi";
 
-
-
-
-
-// HowTo:Para usar la data desde la api:
-//() una vez que desde la api esta bien configurado
-//initial state "vacio"
-//en reducer generar un setLoNecesites
-//generar una  funcion async que traiga la data de la api
-//llamar la funcion en el componente que se necesite (con dispatch  y useEffect)
 const gymSlice = createSlice({
     name: "gyms",
     initialState: {
@@ -36,7 +26,6 @@ const gymSlice = createSlice({
 
 //se exportan los reducers
 export const { setGymPressed, setAllGyms, setClass} = gymSlice.actions;
-
 export default gymSlice.reducer;
 
 
@@ -45,12 +34,13 @@ export const fetchGymsData = () => async (dispatch) => {
     const response = await useGetGymListQuery(); // Realiza la consulta a la API
     dispatch(setAllGyms(response.data)); // Actualiza el estado con los datos recibidos
 }
-
+/*
 export const fetchClassData = () => async (dispatch) => {
     console.log("dentro de FetchClassData: ",useGetClassQuery())
     const response = await useGetClassQuery(); // Realiza la consulta a la API
     dispatch(setClass(response.data)); // Actualiza el estado con los datos recibidos
 }
+*/
 
 //HowTo: usar  el setGymPressed
 //dentro del componente o screen se importa el reducer y dispatch
@@ -67,6 +57,12 @@ const dispatch  = useDispatch();
 
     // se navega  hacia la pag deseada
     props.navigation.navigate("gymDetail")
-
 }
+
+// HowTo:Para usar la data desde la api:
+//() una vez que desde la api esta bien configurado
+//initial state "vacio"
+//en reducer generar un setLoNecesites
+//generar una  funcion async que traiga la data de la api
+//llamar la funcion en el componente que se necesite (con dispatch  y useEffect)
 */

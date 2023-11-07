@@ -1,15 +1,8 @@
-/* eslint-disable */
 import React from 'react';
 import {StyleSheet, FlatList, View, Text } from 'react-native';
 import EventDayItem from './EventDayItem';
 
-
-
-
-
 const CustomCalendarList = ({ items }) => {
-
-
     return (
         <View>
             <Text  styles={styles.container}>List of Events:</Text>
@@ -28,15 +21,10 @@ const CustomCalendarList = ({ items }) => {
 
 const styles = StyleSheet.create({
     container: {
-
         borderColor: 'red',
         borderWidth: 5,
-
-
-
     },
     text: {
-
         borderColor: 'red',
         borderWidth: 5,
     },
@@ -44,7 +32,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'red',
     },
     flat: {
-
         borderColor: 'green',
         borderWidth: 5,
     }

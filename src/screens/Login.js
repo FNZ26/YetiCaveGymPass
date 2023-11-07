@@ -25,7 +25,6 @@ const Login = (props) => {
             const response = await signInWithEmailAndPassword(firebase_auth, email, password);
             //console.log(response);
 
-
             AsyncStorage.setItem("userEmail", response.user.email);
 
 
@@ -138,8 +137,6 @@ const styles = StyleSheet.create({
 
         alignContent: 'center',
         flexDirection: 'row',
-
-
     }
 
 })

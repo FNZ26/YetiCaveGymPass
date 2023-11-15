@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { Colors } from '../theme/Colors'
 import Rate from './Rate'
@@ -47,7 +47,10 @@ const GymItem = (props) => {
 
         <View style={styles.boxTop}>
           <Text style={styles.title}>{props.item.nombre} </Text>
-          <Text style={styles.image} >Imagen</Text>
+          <Image 
+            style={styles.tinyLogo}
+            source={require('../../assets/images/logo.png')}
+          />
         </View>
         <View style={styles.boxBot}>
           <View style={styles.boxData} >
@@ -75,10 +78,10 @@ const styles = StyleSheet.create({
     height: 150,
     borderColor: Colors.green,
     borderBottomWidth: 2,
-    padding: 6,
+    padding: 10,
     alignItems: 'center',
     justifyContent: 'center',
-
+    paddingHorizontal: 25
   },
   boxTop: {
     flex: 1,
@@ -113,5 +116,12 @@ const styles = StyleSheet.create({
   image: {
     borderRadius: 100,
     alignSelf: 'flex-start',
+  },
+  tinyLogo: {
+    height: 90,
+    width: 90,
+    backgroundColor: Colors.yellow,
+    borderRadius: 100,
+    borderWidth: 1,
   }
 })

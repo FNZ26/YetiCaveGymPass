@@ -1,32 +1,29 @@
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
+import { Image, Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
 import { useState } from 'react'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Colors } from '../theme/Colors'
 import { TouchableOpacity } from 'react-native'
 import { signInWithEmailAndPassword } from 'firebase/auth'
-// lo necesario para el login (precisa el registrarse previamente)
 import { firebase_auth } from '../firebase/firebase_auth';
 import { useDispatch } from 'react-redux'
 import { setIdToken, setUser } from '../redux/slices/authSlice'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-// falta terminar lo del boton de iniciar sesion que te lleve a la app
 const Login = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
 
-    //usar un setX desde el slice de auth
+
     const dispatch = useDispatch();
+
     const onHandleLogin = async () => {
 
         try {
             const response = await signInWithEmailAndPassword(firebase_auth, email, password);
             //console.log(response);
-
             AsyncStorage.setItem("userEmail", response.user.email);
-
 
             dispatch(setUser(response.user.email));
             dispatch(setIdToken(response._tokenResponse.idToken));
@@ -40,9 +37,11 @@ const Login = (props) => {
     return (
         <SafeAreaView style={styles.container}>
 
-            <Text style={styles.title}>Logo</Text>
-
-         
+            <Image
+                style={styles.tinyLogo}
+                source={require('../../assets/images/logo.png')}
+            />
+            <Text style={styles.title}>Yeti Cave Gym Pass</Text>
 
             <TextInput
                 placeholder='Email'
@@ -62,7 +61,7 @@ const Login = (props) => {
                 <Text >Iniciar Sesion</Text>
             </TouchableOpacity>
 
-            
+
         </SafeAreaView>
     )
 }
@@ -85,7 +84,9 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         marginVertical: 10,
         borderBottomWidth: 2,
-        borderColor: Colors.yellow,
+     borderColor: Colors.yellow,
+        fontFamily: 'NunitoMedium',
+        color: Colors.white,
 
 
     },
@@ -114,13 +115,13 @@ const styles = StyleSheet.create({
     },
     finalText: {
         fontSize: 20,
-  
+
         marginHorizontal: 5,
 
     },
     loginText: {
         fontSize: 20,
-    
+
         marginHorizontal: 5,
         color: Colors.yellow,
         borderBottomWidth: 2,
@@ -129,7 +130,7 @@ const styles = StyleSheet.create({
     },
     Pressable: {
         fontSize: 22,
-        
+
         color: 'blue',
         marginHorizontal: 5,
     },
@@ -137,6 +138,14 @@ const styles = StyleSheet.create({
 
         alignContent: 'center',
         flexDirection: 'row',
-    }
+    },
+    tinyLogo: {
+        height: 200,
+        width: 200,
+        backgroundColor: Colors.yellow,
+        borderRadius: 100,
+        borderWidth: 1,
+        marginBottom: 100,
+    },
 
 })

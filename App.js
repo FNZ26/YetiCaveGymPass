@@ -1,5 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
-
 import { useFonts } from 'expo-font';
 import MainNavigation from './src/navigation/MainNavigation';
 import { Provider } from 'react-redux';
@@ -36,18 +34,21 @@ estetico:
 -Agregar Imagenes donde corresponde (gym, logo login, perfil)
 -Agregar estilos (varias partes de la app)
 -Estilos de Agenda (bug?)
-
+- Estilo y Texto en el calendario, quitar boton de gym, es innecesario
+-  en perfil terminar de hacer el estilo
+-El flatList de gyms queda tapado por el tabnav
 
 funcional:
--Configurar para que depende el tipo usuario, aparezca la parte de administracion (ideal ddesde la bbdd, sino con un codigo)
--Inicio de Sesion no redirige automaticamente al dar iniciar sesion
--cerrar sesion no redirige a login
--Agregar Modales (varias partes de la app)
 
+-Agregar Modales (varias partes de la app)
+ -Cerrar Sesion
+ -subscribir  clase en ddbb
+
+ 
 -Del lado de administracion, solucionar problema que genera una direccion mas a la hora de guardar la data class>fecha>DATA(este no deberia ir)>clases
 -Funciones de login (notificar errores (porque se  rechaza mail/contraseña, errores, etc) )
-
-
-
+-Perfil: boton historial e inventar certificado pago (tendria que ser carnet membresia actual o algo asi)
+-Perfil: imagen perfil
+-Administracion: usar el Card y sumar funciones de administrador (solo estetico, no es necesario para aprobar)
 
 */

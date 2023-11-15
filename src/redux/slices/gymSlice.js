@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { useGetClassQuery, useGetGymListQuery } from "../../services/gymApi";
+import {  useGetGymListQuery } from "../../services/gymApi";
 
 const gymSlice = createSlice({
     name: "gyms",
@@ -9,6 +9,7 @@ const gymSlice = createSlice({
         gymPressed: [],
         class: [],
         test: [],
+      
     },
     reducers: {
         setGymPressed: (state, action) => {
@@ -20,6 +21,7 @@ const gymSlice = createSlice({
         setClass: (state, action) => {
             state.class = action.payload;
         },
+      
        
     },
 })
@@ -34,6 +36,10 @@ export const fetchGymsData = () => async (dispatch) => {
     const response = await useGetGymListQuery(); // Realiza la consulta a la API
     dispatch(setAllGyms(response.data)); // Actualiza el estado con los datos recibidos
 }
+
+
+
+
 /*
 export const fetchClassData = () => async (dispatch) => {
     console.log("dentro de FetchClassData: ",useGetClassQuery())

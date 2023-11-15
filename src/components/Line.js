@@ -2,11 +2,11 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Colors } from '../theme/Colors'
 
-const Line = ({ size = '100%' }) => {
+const Line = ({ size = '100%',  colorCustom = Colors.green }) => {
     // recibe el tamaño de la linea en %
     return (
         <View style={styles.lineContainer} >
-            <View style={[styles.line, { width: size }]} />
+            <View style={[styles.line, { width: size }, {backgroundColor: colorCustom}]} />
         </View>
     )
 }
@@ -15,9 +15,7 @@ export default Line
 
 const styles = StyleSheet.create({
     line: {
-        backgroundColor: Colors.green,
-        height: 4,
-        marginTop: 10,
+        height: 3,
         borderRadius: 100,
     },
     lineContainer: {
@@ -25,6 +23,6 @@ const styles = StyleSheet.create({
         padding: 5,
         alignItems: 'center',
         justifyContent: 'center',
-
+        alignContent:  'center',
     }
 })

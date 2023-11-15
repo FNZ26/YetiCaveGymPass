@@ -13,15 +13,15 @@ const MainNavigation = () => {
   useEffect(() => {
     const checkUser = async () => {
       try {
-        const userEmail = await AsyncStorage.getItem("userEmail",);
+        const userEmail = await AsyncStorage.getItem("userEmail");
         userEmail ? setCheckedUser(userEmail) : setCheckedUser(user);
 
       } catch (error) {
-        console.log("hubo error: ",error);
+        console.log("Error en el check de user: ",error);
       }
     };
     checkUser();
-  }, [user]);
+  }, [user, checkedUser]);
   //console.log("usuario: ", user)
   return (
     <NavigationContainer>

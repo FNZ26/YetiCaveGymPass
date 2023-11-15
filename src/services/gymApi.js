@@ -33,8 +33,15 @@ export const gymApi = createApi({
                 body: nuevaClase,
             }),
         }),
+        getUsersList: builder.query({
+            query: () => "users.json",
+        }),
+        getPayHistory: builder.query({
+            query: () => "payHistory.json",
+
+        }),
 
     }),
 });
 
-export const { useGetGymListQuery, useGetClassQuery, useGetTestQuery, useAddClassMutation } = gymApi;
+export const { useGetGymListQuery, useGetClassQuery, useGetTestQuery, useAddClassMutation, useGetUsersListQuery, useGetPayHistoryQuery } = gymApi;
